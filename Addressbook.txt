@@ -84,3 +84,31 @@ mysql> SELECT * FROM Address_book
 | anjali     | patil     | ghansoli  | navi-mumbai | MH    | 400047 | 096478321  | anjali@mail.com  |
 +------------+-----------+-----------+-------------+-------+--------+------------+------------------+
 6 rows in set (0.00 sec)
+
+--------------------------------------------------------------------
+UC4- UPDATE THE EXISTING CONTACT USING THIER NAME
+-------------------------------------------------------------------
+mysql> UPDATE Address_book set address = "vileparle" WHERE first_name = "shardul";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Address_book set city = "Dhule" WHERE last_name = "buthello";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Address_book set phone_no = "1234567891" WHERE first_name = "shivani";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM Address_book;
++------------+-----------+-----------+-------------+-------+--------+------------+------------------+
+| first_name | last_name | address   | city        | state | zip    | phone_no   | email_id         |
++------------+-----------+-----------+-------------+-------+--------+------------+------------------+
+| shardul    | warishe   | vileparle | mumbai      | MH    | 400043 | 2309876523 | shardul@mail.com |
+| jb         | buthello  | mankhurd  | Dhule       | MH    | 400042 | 2309123456 | jb@mail.com      |
+| shivani    | wagh      | nehrul    | navi-mumbai | MH    | 400041 | 1234567891 | shivani@mail.com |
+| hrutu      | sanas     | juhinagar | navi-mumbai | MH    | 400044 | 1234567890 | hrutu@mail.com   |
+| amruta     | shine     | sion      | mumbai      | MH    | 400049 | 2301209876 | ammu@mail.com    |
+| anjali     | patil     | ghansoli  | navi-mumbai | MH    | 400047 | 096478321  | anjali@mail.com  |
++------------+-----------+-----------+-------------+-------+--------+------------+------------------+
+6 rows in set (0.00 sec)
