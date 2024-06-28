@@ -164,3 +164,16 @@ mysql> SELECT * FROM Address_book WHERE city = "mumbai";
 | amruta     | shine     | sion      | mumbai | MH    | 400049 | 2301209876 | ammu@mail.com    |
 +------------+-----------+-----------+--------+-------+--------+------------+------------------+
 2 rows in set (0.00 sec)
+
+-----------------------------------------------------------------------------
+UC7 - ABILITY TO GET COUNT OF STATE AND CITY FROM THE TABLE
+-----------------------------------------------------------------------------
+mysql> SELECT city, state , COUNT(*) AS Total_count FROM Address_book GROUP BY city,state;
++-------------+-------+-------------+
+| city        | state | Total_count |
++-------------+-------+-------------+
+| mumbai      | MH    |           2 |
+| Dhule       | MH    |           1 |
+| navi-mumbai | MH    |           2 |
++-------------+-------+-------------+
+3 rows in set (0.02 sec)
