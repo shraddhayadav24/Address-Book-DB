@@ -40,3 +40,19 @@ mysql> show databases;
 | sys                      |
 +--------------------------+
 29 rows in set (0.01 sec)
+
+---------------------------------------------------------------------
+UC2- CREATE TABLE OF ADDRESBOOK
+---------------------------------------------------------------------
+mysql> use address_book;
+Database changed
+mysql> CREATE TABLE Address_book (
+    ->   first_name VARCHAR(150) NOT NULL,
+    ->   last_name VARCHAR(150) NOT NULL,
+    ->   address VARCHAR(150) NOT NULL,
+    ->   city VARCHAR(150) NOT NULL,
+    ->   state VARCHAR(150) NOT NULL,
+    ->   zip VARCHAR(150) NOT NULL,
+    ->   phone_no VARCHAR(150) NOT NULL,
+    ->   email_id VARCHAR(150) NOT NULL );
+Query OK, 0 rows affected (0.09 sec)
