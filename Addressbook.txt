@@ -279,6 +279,31 @@ mysql> SELECT * FROM address_book;
 +------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
 5 rows in set (0.00 sec)
 
+-------------------------------------------------------------------------------------
+UC10:- ABILITY TO GET COUNT OF FAMILY AND FRIENDS
+---------------------------------------------------------------------------------------
+mysql> SELECT COUNT(TYPE)
+    -> FROM address_book
+    -> GROUP BY type;
++-------------+
+| COUNT(TYPE) |
++-------------+
+|           3 |
+|           2 |
++-------------+
+2 rows in set (0.05 sec)
+
+mysql> SELECT type,COUNT(TYPE)
+    -> FROM address_book
+    -> GROUP BY type;
++---------+-------------+
+| type    | COUNT(TYPE) |
++---------+-------------+
+| Family  |           3 |
+| Friends |           2 |
++---------+-------------+
+2 rows in set (0.00 sec)
+
 
 
 
