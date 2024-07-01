@@ -304,6 +304,61 @@ mysql> SELECT type,COUNT(TYPE)
 +---------+-------------+
 2 rows in set (0.00 sec)
 
+------------------------------------------------------------------------------------------------
+UC11- ADD PERSON TO BOTH FAMILY AND FRIENDS:-
+---------------------------------------------------------------------------------------------------
+mysql> SELECT * FROM address_book;
++------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+| first_name | last_name | address   | city        | state | zip    | phone_no   | email_id         | type    |
++------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+| shardul    | warishe   | vileparle | mumbai      | MH    | 400043 | 2309876523 | shardul@mail.com | Friends |
+| jb         | buthello  | mankhurd  | Dhule       | MH    | 400042 | 2309123456 | jb@mail.com      | Friends |
+| shivani    | wagh      | nehrul    | navi-mumbai | MH    | 400041 | 1234567891 | shivani@mail.com | Family  |
+| hrutu      | sanas     | juhinagar | navi-mumbai | MH    | 400044 | 1234567890 | hrutu@mail.com   | Family  |
+| amruta     | shine     | sion      | mumbai      | MH    | 400049 | 2301209876 | ammu@mail.com    | Family  |
++------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+5 rows in set (0.01 sec)
+
+mysql> ALTER TABLE address_book
+    -> ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY FIRST;
+Query OK, 0 rows affected (0.31 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM address_book;
++----+------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+| id | first_name | last_name | address   | city        | state | zip    | phone_no   | email_id         | type    |
++----+------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+|  1 | shardul    | warishe   | vileparle | mumbai      | MH    | 400043 | 2309876523 | shardul@mail.com | Friends |
+|  2 | jb         | buthello  | mankhurd  | Dhule       | MH    | 400042 | 2309123456 | jb@mail.com      | Friends |
+|  3 | shivani    | wagh      | nehrul    | navi-mumbai | MH    | 400041 | 1234567891 | shivani@mail.com | Family  |
+|  4 | hrutu      | sanas     | juhinagar | navi-mumbai | MH    | 400044 | 1234567890 | hrutu@mail.com   | Family  |
+|  5 | amruta     | shine     | sion      | mumbai      | MH    | 400049 | 2301209876 | ammu@mail.com    | Family  |
++----+------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO address_book (first_name, last_name, address, city, state, zip, phone_no, email_id, type)
+    -> VALUES ("viraj", "gholap", "kurla", "mumbai", "MH", "40043", "3450987612", "viraj@mail.com", "Family");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO address_book (first_name, last_name, address, city, state, zip, phone_no, email_id, type)
+    -> VALUES ("viraj", "gholap", "kurla", "mumbai", "MH", "40043", "3450987612", "viraj@mail.com", "Family");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM address_book;
++----+------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+| id | first_name | last_name | address   | city        | state | zip    | phone_no   | email_id         | type    |
++----+------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+|  1 | shardul    | warishe   | vileparle | mumbai      | MH    | 400043 | 2309876523 | shardul@mail.com | Friends |
+|  2 | jb         | buthello  | mankhurd  | Dhule       | MH    | 400042 | 2309123456 | jb@mail.com      | Friends |
+|  3 | shivani    | wagh      | nehrul    | navi-mumbai | MH    | 400041 | 1234567891 | shivani@mail.com | Family  |
+|  4 | hrutu      | sanas     | juhinagar | navi-mumbai | MH    | 400044 | 1234567890 | hrutu@mail.com   | Family  |
+|  5 | amruta     | shine     | sion      | mumbai      | MH    | 400049 | 2301209876 | ammu@mail.com    | Family  |
+|  6 | viraj      | gholap    | kurla     | mumbai      | MH    | 40043  | 3450987612 | viraj@mail.com   | Family  |
+|  7 | viraj      | gholap    | kurla     | mumbai      | MH    | 40043  | 3450987612 | viraj@mail.com   | Family  |
++----+------------+-----------+-----------+-------------+-------+--------+------------+------------------+---------+
+7 rows in set (0.00 sec)
+
+
 
 
 
